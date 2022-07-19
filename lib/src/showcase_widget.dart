@@ -41,6 +41,7 @@ class ShowCaseWidget extends StatefulWidget {
   /// Default value is 0.
   final double blurValue;
   final bool enableAutoScroll;
+  final bool disableBarrierInteraction;
 
   const ShowCaseWidget({
     required this.builder,
@@ -54,6 +55,7 @@ class ShowCaseWidget extends StatefulWidget {
     this.scrollDuration = const Duration(milliseconds: 300),
     this.disableAnimation = false,
     this.enableAutoScroll = false,
+    this.disableBarrierInteraction = false,
   });
 
   static GlobalKey? activeTargetWidget(BuildContext context) {
@@ -83,6 +85,7 @@ class ShowCaseWidgetState extends State<ShowCaseWidget> {
   late Duration autoPlayDelay;
   late bool autoPlayLockEnable;
   late bool enableAutoScroll;
+  late bool disableBarrierInteraction;
 
   /// Returns value of  [ShowCaseWidget.blurValue]
   double get blurValue => widget.blurValue;
@@ -95,6 +98,7 @@ class ShowCaseWidgetState extends State<ShowCaseWidget> {
     disableAnimation = widget.disableAnimation;
     autoPlayLockEnable = widget.autoPlayLockEnable;
     enableAutoScroll = widget.enableAutoScroll;
+    disableBarrierInteraction = widget.disableBarrierInteraction;
   }
 
   void startShowCase(List<GlobalKey> widgetIds) {
